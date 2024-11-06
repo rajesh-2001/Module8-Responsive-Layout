@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Responsive Flexbox and Grid</title>
+    </head>
+    <style>
+        .container{
+            display: flex;
+            flex-direction: column;
+        }
+        img{
+            height: 300px;
+            width: 100%;
+        }
+        .row{
+            display: flex;
+            margin-bottom: 3px;
+            column-gap: 5px;
+        }
+        .row>div{
+            flex:1;
+        }
+        .rowspan{
+            height:300px;
+        }
+        .rowspan{
+            height:300px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+        .rowspan img{
+            height: calc(50% - 1.5px);
+        }
+        .grid{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap:3px;
+            height:300px;
+         }
+         .grid>img{
+            height:100%;
+         }
+    </style>
+<body>
+    <h2>My picture Collage</h2>
+    <main class="container">
+
+        <section class="row">
+            <img src="images/A.jpg" alt="">
+        </section>
+
+        <section  class="row">
+            <div>
+                <img src="images/B.jpg" alt="">
+            </div>
+            <div>
+                <img src="images/C.jpg" alt="">
+            </div>
+            <div class="rowspan">
+                <img src="images/D.jpg" alt="">
+                <img src="images/E.jpg" alt="">
+            </div>
+        </section>
+
+        <section class="row">
+            <div><img src="images/F.jpg" alt=""></div>
+            <div class="grid">
+                <img src="images/G.jpg" alt="">
+                <img src="images/G.jpg" alt="">
+                <img src="images/G.jpg" alt="">
+                <img src="images/G.jpg" alt="">
+            </div>
+            <div><img src="images/H.jpg" alt=""></div>
+        </section>
+    </main>
+</body>
+</html>
